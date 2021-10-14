@@ -1,0 +1,18 @@
+  .html{
+      background-image: url("assets/bg.jpg");
+  }
+  .intro-img{
+      width: 1000px;
+      margin: auto auto;
+  }
+  .item1 img{
+    width: 300px;
+    height: 250px;
+  }
+  .item2 img{
+      width: 700px;
+      height: 250px;
+  }
+  .border{
+      border-radius: 20px;
+  }
