@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div>
+            <title>My Book</title>
+        </div>
+
+        <link rel="stylesheet" href="c2_training.css">
+        <link rel="stylesheet" href="c3_Testing.css">
+        <link rel="stylesheet" href="http://lib.arvancloud.com/ar/font-awesome/5.9.0/css/all.css">
+
+        <style>
+
+            /* image of book */
+            .book1{
+                background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjQzDTjr8SffW5pKjKneO-UmzJFnMDyURjdjC3OAzfYIsOMklG3TUKMKn-6CHnQmFolrE&usqp=CAU)
+                no-repeat center / contain
+            }
+
+            .book2{
+                background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJExW_nvnHvTImfPFMPy8tGjrPPRVw-HEPg0IoGHxg_vGq44BHQVLJgArU4_YAEM4JxIE&usqp=CAU) 
+                no-repeat center / contain;
+            }
+
+            .book3{
+                background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ630HYqoT9w6n2J358cxlLmEe6ffIjHlWeA3rk3KRgFR8W2n38Z3qAo48_EBv_Jvt1LUU&usqp=CAU)
+                no-repeat center / contain;
+            }
+
+            .book4{
+                background: url(https://upload.wikimedia.org/wikipedia/vi/6/61/Ng%E1%BB%93i_kh%C3%B3c_tr%C3%AAn_c%C3%A2y_cover.jpg) 
+                no-repeat center / contain;
+            }
+
+            .book5{
+                background: url(https://cdn0.fahasa.com/media/catalog/product/c/o/co_gai_den_tu_hom_qua_1_2018_11_16_11_03_46.JPG) 
+                no-repeat center / contain;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- name of web -->
+        <div id="background">   
+            <div>
+                <h1>My Book</h1>
+                <h3>read book, write future</h3>
+            </div>
+
+            <h2>property web of LNY</h2>
+        </div>
+
+        <!-- navbar -->
+        <div class="navbar-cover">    
+            <div>
+                <button class="navbar nav-cat">Category</button>
+                <button class="navbar nav-new">New book</button>
+                <button class="navbar nav-lib">Library</button>
+            </div>
+
+            <div>
+                <button class="navbar nav-sig">Sign in</button>
+                <button class="navbar nav-reg">Register</button>
+            </div>
+        </div>
+
+        <!-- layout form -->
+        <div class="form-container">
+            <form action="" class="form">
+                    <input class="form_input" type="text" id="name">
+                    <button class="button">search</button>
+            </form>
+        </div>
+
+        <!-- book -->
+
+        <!-- book 1 -->
+        <div id="box">
+            <div class="book book1"></div>
+            <div class="content con1">
+        <!-- ====Toast Message==== -->
+        <!-- success -->
+            <div id="toast"></div>
+
+            <div onclick="showBook1Toast();" class="btn btn--info">tuổi trẻ đáng giá bao nhiêu</div>
+
+            <script>
+                // toast function
+                function toast({
+                    title= '',
+                    message= '',
+                    type= 'info',
+                    duration= 3000
+                }) {
+                    const main = document.getElementById('toast');
+                    if(main){
+                        const toast = document.createElement('div');
+                        
+                        // auto remove toast
+                        const autoRemoveId = setTimeout (function(){
+                            main.removeChild(toast);
+                        }, duration + 1000);
+
+                        // remove toast when clicked
+                        toast.onclick = function(e){
+                            if(e.target.closest('.toast__close')){
+                                main.removeChild(toast);
+                                clearTimeout(autoRemoveId);
+                            }
+                        }
+
+                        const icons = {
+                            success:'fas fa-check-circle',
+                            error: 'fas fa-exclamation-triangle',
+                            info: 'fas fa-exclamation-circle',
+                        };
+
+                        const icon = icons[type];
+                        const delay = (duration/1000).toFixed(2);
+
+                        toast.classList.add('toast', `toast--${type}`);
+                        toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s ${delay}s forwards`;
+
+                        toast.innerHTML = `
+                                <div class="toast__icon">
+                                    <i class="${icon}"></i>
+                                </div>
+                                <div class="toast__body">
+                                    <h3 class="toast__title">${title}</h3>
+                                    <p class="toast__msg">${message}</p>
+                                </div>
+                                <div class="toast__close">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            `;
+                        main.appendChild(toast);
+
+                    }
+                }
+
+                function showBook1Toast(){
+                    toast({
+                    title:'Tuổi trẻ đáng giá bao nhiêu',
+                    message: 'Roise Nguyễn - kỹ năng sống',
+                    type: 'info',
+                    duration: 3000
+                    });
+                }
+            </script>
+            </div>
+
+            <div class="anchor">
+                <a href="https://taisachmienphi.com/tuoi-tre-dang-gia-bao-nhieu/">read</a>
+            </div>
+        </div>
+
+        <!-- book 2 -->
+        <div id="box">
+            <div class="book book2"></div>
+            <div class="content con2">
+        <!-- ====Toast Message==== -->
+        <!-- success -->
+        <div id="toast"></div>
+
+        <div onclick="showBook2Toast();" class="btn btn--info">Nhà giả Kim</div>
+
+            <script>
+                // toast function
+                function toast({
+                    title= '',
+                    message= '',
+                    type= 'info',
+                    duration= 3000
+                }) {
+                    const main = document.getElementById('toast');
+                    if(main){
+                        const toast = document.createElement('div');
+                        
+                        // auto remove toast
+                        const autoRemoveId = setTimeout (function(){
+                            main.removeChild(toast);
+                        }, duration + 1000);
+
+                        // remove toast when clicked
+                        toast.onclick = function(e){
+                            if(e.target.closest('.toast__close')){
+                                main.removeChild(toast);
+                                clearTimeout(autoRemoveId);
+                            }
+                        }
+
+                        const icons = {
+                            success:'fas fa-check-circle',
+                            error: 'fas fa-exclamation-triangle',
+                            info: 'fas fa-exclamation-circle',
+                        };
+
+                        const icon = icons[type];
+                        const delay = (duration/1000).toFixed(2);
+
+                        toast.classList.add('toast', `toast--${type}`);
+                        toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s ${delay}s forwards`;
+
+                        toast.innerHTML = `
+                                <div class="toast__icon">
+                                    <i class="${icon}"></i>
+                                </div>
+                                <div class="toast__body">
+                                    <h3 class="toast__title">${title}</h3>
+                                    <p class="toast__msg">${message}</p>
+                                </div>
+                                <div class="toast__close">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            `;
+                        main.appendChild(toast);
+
+                    }
+                }
+
+                function showBook2Toast(){
+                    toast({
+                    title:'Nhà giả kim',
+                    message: 'Paulo Ceolho - văn học nước ngoài, kỹ năng sống',
+                    type: 'info',
+                    duration: 3000
+                    });
+                }
+                </script>
+                </div>
+
+                <div class="anchor">
+                    <a href="https://taisachmienphi.com/tuoi-tre-dang-gia-bao-nhieu/">read</a>
+                </div>
+            </div>
+            
+            <!-- book 3 -->
+            <div id="box">
+                <div class="book book3"></div>
+                <div class="content con3">
+            <!-- ====Toast Message==== -->
+            <!-- success -->
+            <div id="toast"></div>
+
+            <div onclick="showBook3Toast();" class="btn btn--info">Dám bị ghét</div>
+
+            <script>
+                // toast function
+                function toast({
+                    title= '',
+                    message= '',
+                    type= 'info',
+                    duration= 3000
+                }) {
+                    const main = document.getElementById('toast');
+                    if(main){
+                        const toast = document.createElement('div');
+                        
+                        // auto remove toast
+                        const autoRemoveId = setTimeout (function(){
+                            main.removeChild(toast);
+                        }, duration + 1000);
+
+                        // remove toast when clicked
+                        toast.onclick = function(e){
+                            if(e.target.closest('.toast__close')){
+                                main.removeChild(toast);
+                                clearTimeout(autoRemoveId);
+                            }
+                        }
+
+                        const icons = {
+                            success:'fas fa-check-circle',
+                            error: 'fas fa-exclamation-triangle',
+                            info: 'fas fa-exclamation-circle',
+                        };
+
+                        const icon = icons[type];
+                        const delay = (duration/1000).toFixed(2);
+
+                        toast.classList.add('toast', `toast--${type}`);
+                        toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s ${delay}s forwards`;
+
+                        toast.innerHTML = `
+                                <div class="toast__icon">
+                                    <i class="${icon}"></i>
+                                </div>
+                                <div class="toast__body">
+                                    <h3 class="toast__title">${title}</h3>
+                                    <p class="toast__msg">${message}</p>
+                                </div>
+                                <div class="toast__close">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            `;
+                        main.appendChild(toast);
+
+                    }
+                }
+
+                function showBook3Toast(){
+                    toast({
+                    title:'Dám bị ghét',
+                    message: 'Kishimi Ichiro, Koga Fumitake - kỹ năng sống',
+                    type: 'info',
+                    duration: 3000
+                    });
+                }
+            </script>
+            </div>
+
+            <div class="anchor">
+                <a href="https://taisachmienphi.com/tuoi-tre-dang-gia-bao-nhieu/">read</a>
+            </div>
+        </div>
+        
+        <!-- book 4 -->
+        <div id="box">
+            <div class="book book4"></div>
+            <div class="content con4">
+                <!-- ====Toast Message==== -->
+                <!-- success -->
+                <div id="toast"></div>
+
+                <div>
+                    <div onclick="showBook4Toast();" class="btn btn--info">Ngồi khóc trên cây</div>
+                </div>
+
+                <script>
+                    // toast function
+                    function toast({
+                        title= '',
+                        message= '',
+                        type= 'info',
+                        duration= 3000
+                    }) {
+                        const main = document.getElementById('toast');
+                        if(main){
+                            const toast = document.createElement('div');
+                            
+                            // auto remove toast
+                            const autoRemoveId = setTimeout (function(){
+                                main.removeChild(toast);
+                            }, duration + 1000);
+
+                            // remove toast when clicked
+                            toast.onclick = function(e){
+                                if(e.target.closest('.toast__close')){
+                                    main.removeChild(toast);
+                                    clearTimeout(autoRemoveId);
+                                }
+                            }
+
+                            const icons = {
+                                success:'fas fa-check-circle',
+                                error: 'fas fa-exclamation-triangle',
+                                info: 'fas fa-exclamation-circle',
+                            };
+
+                            const icon = icons[type];
+                            const delay = (duration/1000).toFixed(2);
+
+                            toast.classList.add('toast', `toast--${type}`);
+                            toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s ${delay}s forwards`;
+
+                            toast.innerHTML = `
+                                    <div class="toast__icon">
+                                        <i class="${icon}"></i>
+                                    </div>
+                                    <div class="toast__body">
+                                        <h3 class="toast__title">${title}</h3>
+                                        <p class="toast__msg">${message}</p>
+                                    </div>
+                                    <div class="toast__close">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                `;
+                            main.appendChild(toast);
+
+                        }
+                    }
+
+                    function showBook4Toast(){
+                        toast({
+                        title:'Ngồi khóc trên cây',
+                        message: 'Nguyễn Nhật Ánh - truyện teen Việt Nam',
+                        type: 'info',
+                        duration: 3000
+                        });
+                    }
+                </script>
+            </div>
+
+            <div class="anchor">
+                <a href="https://taisachmienphi.com/tuoi-tre-dang-gia-bao-nhieu/">read</a>
+            </div>
+        </div>
+
+        <!-- book 5 -->
+        <div id="box">
+            <div class="book book5"></div>
+            <div class="content con5">
+                <!-- ====Toast Message==== -->
+                <!-- success -->
+                <div id="toast"></div>
+
+                <div>
+                    <div onclick="showBook5Toast();" class="btn btn--info">Cô gái đến từ hôm qua</div>
+                </div>
+
+                <script>
+                    // toast function
+                    function toast({
+                        title= '',
+                        message= '',
+                        type= 'info',
+                        duration= 3000
+                    }) {
+                        const main = document.getElementById('toast');
+                        if(main){
+                            const toast = document.createElement('div');
+                            
+                            // auto remove toast
+                            const autoRemoveId = setTimeout (function(){
+                                main.removeChild(toast);
+                            }, duration + 1000);
+
+                            // remove toast when clicked
+                            toast.onclick = function(e){
+                                if(e.target.closest('.toast__close')){
+                                    main.removeChild(toast);
+                                    clearTimeout(autoRemoveId);
+                                }
+                            }
+
+                            const icons = {
+                                success:'fas fa-check-circle',
+                                error: 'fas fa-exclamation-triangle',
+                                info: 'fas fa-exclamation-circle',
+                            };
+
+                            const icon = icons[type];
+                            const delay = (duration/1000).toFixed(2);
+
+                            toast.classList.add('toast', `toast--${type}`);
+                            toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s ${delay}s forwards`;
+
+                            toast.innerHTML = `
+                                    <div class="toast__icon">
+                                        <i class="${icon}"></i>
+                                    </div>
+                                    <div class="toast__body">
+                                        <h3 class="toast__title">${title}</h3>
+                                        <p class="toast__msg">${message}</p>
+                                    </div>
+                                    <div class="toast__close">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                `;
+                            main.appendChild(toast);
+
+                        }
+                    }
+
+                    function showBook5Toast(){
+                        toast({
+                        title:'Cô gái đến từ hôm qua',
+                        message: 'Nguyễn Nhật Ánh - truyện teen Việt Nam',
+                        type: 'info',
+                        duration: 3000
+                        });
+                    }
+                </script>
+            </div>
+
+            <div class="anchor">
+                <a href="https://taisachmienphi.com/tuoi-tre-dang-gia-bao-nhieu/">read</a>
+            </div>
+        </div>
+
+    </body>
+</html>
