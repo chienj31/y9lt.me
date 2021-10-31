@@ -1,0 +1,215 @@
+/* background all of web */
+html{
+    background-color: rgb(247, 242, 196);
+    height: 1500px;
+    position: -webkit-sticky;
+}
+
+/* background name of web */
+#background{
+    width: 99%;
+    height: 200px;
+    background-color: rgba(7, 253, 138, 0.2);
+    padding: 30px;
+    border: rgba(133, 240, 11, 0.808) 5px dotted;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    position: fixed;
+    top: 0;
+    display: inline-flex;
+    justify-content: space-between;
+}
+#background:hover{
+    width: 99%;
+    height: 200px;
+    background-color:rgba(208, 243, 7, 0.2);
+    padding: 30px;
+    box-sizing: border-box;
+    border: rgb(245, 189, 6) 5px dotted;
+    background-clip: padding-box;
+}
+
+h1{
+    color: orangered;
+    font-size: 60px;
+    font-style: oblique;
+    margin: 10px 50px 0px;
+}
+
+h1:hover{
+    color: floralwhite;
+}
+
+h1::first-letter{
+    font-size: 80px;
+}
+
+h2{
+    font-size: 15px;
+    font-style: italic;
+    margin: 10px 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+h2:hover{
+    color: floralwhite;
+}
+
+h2::first-letter{
+    font-size: 25px;
+}
+
+h3{
+    font-size: 13px;
+    font-style: italic;
+    margin: 0px 50px 0px;
+    color: rgb(99, 66, 243);
+}
+
+/* navbar */
+.navbar-cover{
+    margin-top: 230px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+    /* block */
+.navbar{
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.navbar + .navbar{
+    margin-left: 14px;
+    margin-top: 5px;
+}
+.navbar:hover{
+    opacity: 0.6;
+}
+    /* elements */
+.nav-cat{
+    background-color: red;
+}
+.nav-new{
+    background-color: green;
+}
+.nav-lib{
+    background-color: blue;
+}
+.nav-sig{
+    background-color: chocolate;
+}
+.nav-reg{
+    background-color: coral;
+}
+
+/* layout form */
+.form-container{
+    max-width: 300px;
+    padding: 40px;
+    margin: 36px auto 0 auto;
+    background-color: white;
+    font-size: 18px;
+    font-style: initial;
+}
+
+.button{
+    min-width: 80px
+}
+
+.form_input{
+    margin-right: 20px;
+    flex: 1;
+}
+
+/* background of book */
+#box{
+    width: 200px;
+    height: 360px;
+    margin: 20px 30px;
+    float: left;
+}
+
+.book{
+    width: 160px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px black solid; */
+    margin-left: 20px;
+}
+
+.book1{
+    padding: 10px;
+    border: black 2px solid;
+    box-sizing: border-box;
+    background-size: 100%;
+}
+.book1:hover{
+ background: linear-gradient(rgba(233, 5, 5, 0.1), rgb(243, 208, 7));
+}
+
+.book2{
+    padding: 10px;
+    border: black 2px solid;
+    box-sizing: border-box;
+    background-size: 100%;   
+}
+.book2:hover{
+    background: linear-gradient(rgba(248, 172, 6, 0.1), rgb(233, 229, 7));
+}
+   
+.book3{
+    padding: 10px;
+    border: black 2px solid;
+    box-sizing: border-box;
+    background-size: 100%;
+}
+.book3:hover{
+    background: linear-gradient(rgba(186, 235, 9, 0.1), rgb(124, 228, 5));
+}  
+
+.book4{
+    padding: 10px;
+    border: black 2px solid;
+    box-sizing: border-box;
+    background-size: 100%; 
+}
+.book4:hover{
+    background: linear-gradient(rgba(5, 212, 240, 0.1), rgb(7, 150, 233));
+}
+
+.book5{
+    padding: 10px;
+    border: black 2px solid;
+    box-sizing: border-box;
+    background-size: 100%;  
+}
+.book5:hover{
+    background: linear-gradient(rgba(154, 4, 224, 0.1), rgb(231, 7, 37));
+}
+   
+.content{
+    width: 180px;
+    height: 50px;
+    font-size: 15px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
